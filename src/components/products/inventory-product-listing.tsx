@@ -1,8 +1,8 @@
-import { Product } from '@/constants/data';
 import { searchParamsCache } from '@/lib/searchparams';
 import { DataTable as ProductTable } from '@/components/ui/table/data-table';
 import { columns } from './inventory-product-tables/columns';
 import { getProductsWithFilter } from '@/actions/product-action';
+import { Product } from 'types/product-type';
 
 type ProductListingPage = object;
 
