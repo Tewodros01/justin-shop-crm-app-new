@@ -69,7 +69,7 @@ export default function AppSidebar() {
   return (
     <Sidebar collapsible='icon'>
       <SidebarHeader>
-        <div className='flex gap-2 py-2 text-sidebar-accent-foreground'>
+        <div className='flex gap-2 py-2'>
           <div className='flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground'>
             <company.logo className='size-4' />
           </div>
@@ -87,7 +87,7 @@ export default function AppSidebar() {
               <SidebarMenuButton
                 asChild
                 tooltip='Dashboard'
-                isActive={pathname === '/dashboard'}
+                isActive={pathname === '/dashboard/overview'}
               >
                 <Link href='/dashboard'>
                   <ShoppingCart />
