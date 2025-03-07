@@ -29,63 +29,65 @@ export default function Page() {
   return (
     <PageContainer scrollable={false}>
       {/* Tabs */}
-      <div className='flex space-x-2 rounded-md bg-white p-4'>
-        {tabs.map((tab) => (
-          <Button
-            key={tab.value}
-            variant='outline'
-            onClick={() => handleTabChange(tab.value)}
-            className={cn(
-              'rounded-md px-4 py-2 text-sm font-medium',
-              activeTab === tab.value
-                ? 'bg-orange-500 text-white'
-                : 'bg-white text-black hover:bg-gray-200'
-            )}
-          >
-            {tab.name}
-          </Button>
-        ))}
-      </div>
+      <div className='flex w-full flex-col'>
+        <div className='flex space-x-2 rounded-md bg-white'>
+          {tabs.map((tab) => (
+            <Button
+              key={tab.value}
+              variant='outline'
+              onClick={() => handleTabChange(tab.value)}
+              className={cn(
+                'rounded-md px-4 py-2 text-sm font-medium',
+                activeTab === tab.value
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-white text-black hover:bg-gray-200'
+              )}
+            >
+              {tab.name}
+            </Button>
+          ))}
+        </div>
 
-      {/* Connection Status */}
-      {activeTab === 'status' && (
-        <div className='mt-6 space-y-4'>
-          {/* Stripe Connection Status */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Stato Connessione</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className='text-lg font-semibold'>Stripe</p>
-            </CardContent>
-          </Card>
-
-          {/* E-commerce Connection Status */}
-          <Card>
-            <CardHeader className='flex items-center justify-between'>
-              <div>
+        {/* Connection Status */}
+        {activeTab === 'status' && (
+          <div className='mt-6 space-y-4'>
+            {/* Stripe Connection Status */}
+            <Card>
+              <CardHeader>
                 <CardTitle>Stato Connessione</CardTitle>
-                <p className='text-lg font-semibold'>E-commerce</p>
-              </div>
-              <CheckCircleIcon className='h-6 w-6 text-green-500' />
-            </CardHeader>
-            <CardContent>
-              <p className='text-sm text-muted-foreground'>
-                Collega il tuo e-commerce per semplificare la gestione dei
-                prodotti nel tuo negozio online.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      )}
+              </CardHeader>
+              <CardContent>
+                <p className='text-lg font-semibold'>Stripe</p>
+              </CardContent>
+            </Card>
 
-      {/* Placeholder Content for Other Tabs */}
-      {activeTab !== 'status' && (
-        <div className='mt-6 text-center text-gray-500'>
-          Contenuto di "{tabs.find((t) => t.value === activeTab)?.name}" in fase
-          di sviluppo...
-        </div>
-      )}
+            {/* E-commerce Connection Status */}
+            <Card>
+              <CardHeader className='flex items-center justify-between'>
+                <div>
+                  <CardTitle>Stato Connessione</CardTitle>
+                  <p className='text-lg font-semibold'>E-commerce</p>
+                </div>
+                <CheckCircleIcon className='h-6 w-6 text-green-500' />
+              </CardHeader>
+              <CardContent>
+                <p className='text-sm text-muted-foreground'>
+                  Collega il tuo e-commerce per semplificare la gestione dei
+                  prodotti nel tuo negozio online.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Placeholder Content for Other Tabs */}
+        {activeTab !== 'status' && (
+          <div className='mt-6 text-center text-gray-500'>
+            Contenuto di "{tabs.find((t) => t.value === activeTab)?.name}" in
+            fase di sviluppo...
+          </div>
+        )}
+      </div>
     </PageContainer>
   );
 }
