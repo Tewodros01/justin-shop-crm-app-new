@@ -34,7 +34,7 @@ export default function OverViewLayout() {
                 Solo un passo ti separa dall'accettare pagamenti e attivare il
                 tuo account: collega il tuo account adesso!
               </p>
-              <Button className='mt-4 w-full bg-violet-600 text-white hover:bg-violet-700'>
+              <Button className='mt-20 w-full bg-violet-600 text-white hover:bg-violet-700'>
                 Connetti con Stripe
               </Button>
             </CardContent>
