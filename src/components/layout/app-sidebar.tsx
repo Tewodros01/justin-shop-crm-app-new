@@ -50,9 +50,9 @@ export default function AppSidebar() {
             <div className='relative h-16 w-full'>
               <Image
                 src='/logo-justin-shop-mobile.png'
-                alt={`${company.name} Collapsed Logo`}
+                alt={`${company.name} Logo`}
                 fill
-                className='object-contain transition-all duration-300'
+                className='object-cover transition-all duration-300'
                 priority
               />
             </div>
