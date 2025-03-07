@@ -44,10 +44,10 @@ export default function AppSidebar() {
     <Sidebar collapsible='icon'>
       <SidebarHeader className='p-0'>
         {/* Logo Container */}
-        <div className='relative flex w-full items-center justify-center'>
+        <div className='relative mt-4 flex w-full items-center justify-center'>
           {state === 'collapsed' ? (
             // Collapsed Sidebar Logo
-            <div className='relative h-16 w-full'>
+            <div className='relative ml-2 flex h-16 w-full'>
               <Image
                 src='/logo-justin-shop-mobile.png'
                 alt={`${company.name} Logo`}
@@ -58,7 +58,7 @@ export default function AppSidebar() {
             </div>
           ) : (
             // Expanded Sidebar Logo
-            <div className='relative h-16 w-full'>
+            <div className='r relative h-14 w-52'>
               <Image
                 src='/logo-justin-shop.png'
                 alt={`${company.name} Logo`}
