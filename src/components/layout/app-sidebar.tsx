@@ -43,17 +43,31 @@ export default function AppSidebar() {
   return (
     <Sidebar collapsible='icon'>
       <SidebarHeader className='p-0'>
-        {/* Full-width image wrapper */}
-        <div className='relative h-20 w-full'>
-          <Image
-            src='/logo-justin-shop.png'
-            alt={`${company.name} Logo`}
-            fill
-            className='object-cover'
-            priority
-            onLoad={() => console.log('Image loaded:', company.logo)}
-            onError={(e: any) => console.error('Image failed to load:', e)}
-          />
+        {/* Logo Container */}
+        <div className='relative flex w-full items-center justify-center'>
+          {state === 'collapsed' ? (
+            // Collapsed Sidebar Logo
+            <div className='relative h-16 w-full'>
+              <Image
+                src='/logo-justin-shop-mobile.png'
+                alt={`${company.name} Collapsed Logo`}
+                fill
+                className='object-contain transition-all duration-300'
+                priority
+              />
+            </div>
+          ) : (
+            // Expanded Sidebar Logo
+            <div className='relative h-16 w-full'>
+              <Image
+                src='/logo-justin-shop.png'
+                alt={`${company.name} Logo`}
+                fill
+                className='object-cover transition-all duration-300'
+                priority
+              />
+            </div>
+          )}
         </div>
       </SidebarHeader>
       <SidebarContent className='overflow-x-hidden'>
