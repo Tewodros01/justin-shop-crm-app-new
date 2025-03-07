@@ -15,48 +15,67 @@ export type Product = {
 export const navItems: NavItem[] = [
   {
     title: 'Dashboard',
-    url: '/dashboard/overview',
+    url: '/dashboard',
     icon: 'dashboard',
     isActive: false,
     shortcut: ['d', 'd'],
     items: [] // Empty array as there are no child items for Dashboard
   },
   {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
+    title: 'Ordini',
+    url: '/dashboard/orders',
+    icon: 'package',
+    shortcut: ['o', 'o'],
+    items: [] // Empty array as there are no child items for Dashboard
+  },
+  {
+    title: 'Prenotazioni',
+    url: '/dashboard/bookings',
+    icon: 'calendar',
     shortcut: ['p', 'p'],
-    isActive: false,
-    items: [] // No child items
+    items: [] // Empty array as there are no child items for Dashboard
   },
   {
-    title: 'Account',
-    url: '#', // Placeholder as there is no direct link for the parent
-    icon: 'billing',
-    isActive: true,
-
-    items: [
-      {
-        title: 'Profile',
-        url: '/dashboard/profile',
-        icon: 'userPen',
-        shortcut: ['m', 'm']
-      },
-      {
-        title: 'Login',
-        shortcut: ['l', 'l'],
-        url: '/',
-        icon: 'login'
-      }
-    ]
+    title: 'Inventario',
+    url: '/dashboard/inventory',
+    icon: 'package',
+    shortcut: ['i', 'i'],
+    items: [] // Empty array as there are no child items for Dashboard
   },
   {
-    title: 'Kanban',
-    url: '/dashboard/kanban',
-    icon: 'kanban',
-    shortcut: ['k', 'k'],
-    isActive: false,
-    items: [] // No child items
+    title: 'Coupon',
+    url: '/dashboard/coupons',
+    icon: 'tag',
+    shortcut: ['c', 'c'],
+    items: [] // Empty array as there are no child items for Dashboard
+  },
+  {
+    title: 'Lista Prodotti',
+    url: '/dashboard/products',
+    icon: 'bookOpen',
+    shortcut: ['l', 'p'],
+    items: [] // Empty array as there are no child items for Dashboard
+  },
+  {
+    title: 'Negozi',
+    url: '/dashboard/stores',
+    icon: 'store',
+    shortcut: ['n', 'n'],
+    items: [] // Empty array as there are no child items for Dashboard
+  },
+  {
+    title: 'Utenti',
+    url: '/dashboard/users',
+    icon: 'users',
+    shortcut: ['u', 'u'],
+    items: [] // Empty array as there are no child items for Dashboard
+  },
+  {
+    title: 'Impostazioni',
+    url: '/dashboard/settings',
+    icon: 'settings',
+    shortcut: ['s', 's'],
+    items: [] // Empty array as there are no child items for Dashboard
   }
 ];
 
