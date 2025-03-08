@@ -29,7 +29,7 @@ export default function SignInViewPage() {
         <div className='relative z-20 flex items-center text-lg font-medium'>
           <div className='r relative h-14 w-52'>
             <Image
-              src='/Logo-JustinShop white.png'
+              src='/logo-justin-shop-white.png'
               alt={`Logo`}
               fill
               className='object-cover transition-all duration-300'
