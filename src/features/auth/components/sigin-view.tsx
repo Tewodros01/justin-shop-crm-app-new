@@ -37,6 +37,18 @@ export default function SignInViewPage() {
             />
           </div>
         </div>
+
+        {/* Screenshot / Illustration */}
+        <div className='absolute top-40 z-20 flex w-full justify-center'>
+          <Image
+            src='/1.png'
+            alt='Order Activity Illustration'
+            width={600} // Increased width
+            height={500} // Increased height
+            className='w-full max-w-lg object-contain' // Ensuring it scales well
+          />
+        </div>
+
         <div className='relative z-20 mt-auto'>
           <blockquote className='space-y-2'>
             <p className='text-lg'>
@@ -48,6 +60,7 @@ export default function SignInViewPage() {
           </blockquote>
         </div>
       </div>
+
       <div className='flex h-full items-center p-4 lg:p-8'>
         <div className='mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]'>
           <div className='flex flex-col space-y-2 text-center'>
