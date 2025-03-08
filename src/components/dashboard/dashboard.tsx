@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const Dashboard = () => {
   return (
-    <div className='flex flex-1 flex-col space-y-4'>
+    <div className='flex flex-1 flex-col space-y-4 p-4'>
       {/* Progress Bar */}
       <div className='flex items-center justify-between'>
         <h2 className='text-2xl font-bold tracking-tight'>
@@ -24,20 +24,44 @@ const Dashboard = () => {
       {/* Grid Layout for Sections */}
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-2'>
         {/* Connect Stripe Card */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Connetti Stripe</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className='text-sm text-muted-foreground'>
-              Solo un passo ti separa dall&apos;accettare pagamenti e attivare
-              il tuo account: collega il tuo account adesso!
-            </p>
-            <Button className='mt-20 w-full bg-violet-600 text-white hover:bg-violet-700'>
-              Connetti con Stripe
-            </Button>
-          </CardContent>
-        </Card>
+        <div className='flex flex-col gap-4'>
+          <Card>
+            <CardHeader>
+              <CardTitle>Connetti Stripe</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-sm text-muted-foreground'>
+                Solo un passo ti separa dall&apos;accettare pagamenti e attivare
+                il tuo account: collega il tuo account adesso!
+              </p>
+              <Button className='mt-20 w-full bg-violet-600 text-white hover:bg-violet-700'>
+                Connetti con Stripe
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* E-commerce Integration Card */}
+          <Card>
+            <CardHeader className='flex items-center justify-between'>
+              <CardTitle>Hai un e-commerce?</CardTitle>
+              <CheckCircleIcon className='h-5 w-5 text-green-500' />
+            </CardHeader>
+            <CardContent>
+              <p className='text-sm text-muted-foreground'>
+                Se sì, seleziona quale CMS stai utilizzando. Ti avviseremo
+                quando l’integrazione sarà abilitata.
+              </p>
+              <div className='mt-4 flex space-x-2'>
+                <Button variant='outline' className='w-full' disabled>
+                  SI
+                </Button>
+                <Button variant='outline' className='w-full' disabled>
+                  NO
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* Store Creation Card */}
         <Card>
@@ -60,28 +84,6 @@ const Dashboard = () => {
                 height={200}
                 className='rounded-md'
               />
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* E-commerce Integration Card */}
-        <Card>
-          <CardHeader className='flex items-center justify-between'>
-            <CardTitle>Hai un e-commerce?</CardTitle>
-            <CheckCircleIcon className='h-5 w-5 text-green-500' />
-          </CardHeader>
-          <CardContent>
-            <p className='text-sm text-muted-foreground'>
-              Se sì, seleziona quale CMS stai utilizzando. Ti avviseremo quando
-              l’integrazione sarà abilitata.
-            </p>
-            <div className='mt-4 flex space-x-2'>
-              <Button variant='outline' className='w-full' disabled>
-                SI
-              </Button>
-              <Button variant='outline' className='w-full' disabled>
-                NO
-              </Button>
             </div>
           </CardContent>
         </Card>
