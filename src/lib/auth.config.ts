@@ -1,6 +1,8 @@
 import { NextAuthConfig } from 'next-auth';
-import CredentialProvider from 'next-auth/providers/credentials';
+import CredentialsProvider from 'next-auth/providers/credentials';
 import GithubProvider from 'next-auth/providers/github';
+import type { JWT } from 'next-auth/jwt';
+import type { Session } from 'next-auth';
 
 const authConfig = {
   providers: [
@@ -8,35 +10,56 @@ const authConfig = {
       clientId: process.env.GITHUB_ID ?? '',
       clientSecret: process.env.GITHUB_SECRET ?? ''
     }),
-    CredentialProvider({
+    CredentialsProvider({
+      name: 'Credentials',
       credentials: {
-        email: {
-          type: 'email'
-        },
-        password: {
-          type: 'password'
-        }
+        email: { label: 'Email', type: 'email' },
+        password: { label: 'Password', type: 'password' }
       },
-      async authorize(credentials, req) {
-        const user = {
+      async authorize(credentials) {
+        const validUser = {
           id: '1',
-          name: 'John',
-          email: credentials?.email as string
+          name: 'Senape',
+          email: 'senape@sincro.it',
+          password: '123456' // You should hash passwords in a real app!
         };
-        if (user) {
-          // Any object returned will be saved in `user` property of the JWT
-          return user;
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null;
 
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+        if (
+          credentials?.email === validUser.email &&
+          credentials?.password === validUser.password
+        ) {
+          return {
+            id: validUser.id,
+            name: validUser.name,
+            email: validUser.email
+          };
+        } else {
+          throw new Error('Invalid credentials');
         }
       }
     })
   ],
   pages: {
-    signIn: '/' //sigin page
+    signIn: '/login'
+  },
+  session: {
+    strategy: 'jwt'
+  },
+  callbacks: {
+    async jwt({ token, user }): Promise<JWT> {
+      if (user) {
+        token.id = user.id as string; // Explicitly cast `id` as a string
+        token.name = user.name;
+        token.email = user.email;
+      }
+      return token;
+    },
+    async session({ session, token }): Promise<Session> {
+      if (session?.user) {
+        session.user.id = token.id as string; // Explicitly cast `id` as a string
+      }
+      return session;
+    }
   }
 } satisfies NextAuthConfig;
 
