@@ -31,8 +31,8 @@ export default function OverViewLayout() {
             </CardHeader>
             <CardContent>
               <p className='text-sm text-muted-foreground'>
-                Solo un passo ti separa dall'accettare pagamenti e attivare il
-                tuo account: collega il tuo account adesso!
+                Solo un passo ti separa dall&apos;accettare pagamenti e attivare
+                il tuo account: collega il tuo account adesso!
               </p>
               <Button className='mt-20 w-full bg-violet-600 text-white hover:bg-violet-700'>
                 Connetti con Stripe
@@ -49,9 +49,9 @@ export default function OverViewLayout() {
             <CardContent>
               <p className='text-sm text-muted-foreground'>
                 Se possiedi più negozi o filiali, puoi gestirli tutti da un
-                unico account. Clicca su 'Aggiungi Negozio' per inserire le
-                informazioni di ogni punto vendita e inizia a offrire le tue
-                merci in tutta comodità.
+                unico account. Clicca su &apos;Aggiungi Negozio&apos; per
+                inserire le informazioni di ogni punto vendita e inizia a
+                offrire le tue merci in tutta comodità.
               </p>
               <div className='mt-4'>
                 <Image

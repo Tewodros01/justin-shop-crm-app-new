@@ -1,6 +1,5 @@
 'use client';
 
-import PageContainer from '@/components/layout/page-container';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -81,7 +80,7 @@ const SettingsList = () => {
       {/* Placeholder Content for Other Tabs */}
       {activeTab !== 'status' && (
         <div className='mt-6 text-center text-gray-500'>
-          Contenuto di "{tabs.find((t) => t.value === activeTab)?.name}" in fase
+          Contenuto di {tabs.find((t) => t.value === activeTab)?.name} in fase
           di sviluppo...
         </div>
       )}
