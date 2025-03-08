@@ -34,7 +34,7 @@ export default function OverViewLayout() {
                 Solo un passo ti separa dall&apos;accettare pagamenti e attivare
                 il tuo account: collega il tuo account adesso!
               </p>
-              <Button className='mt-20 w-full bg-violet-600 text-white hover:bg-violet-700'>
+              <Button className='mt-6 w-full bg-violet-600 text-white hover:bg-violet-700'>
                 Connetti con Stripe
               </Button>
             </CardContent>
@@ -55,11 +55,11 @@ export default function OverViewLayout() {
               </p>
               <div className='mt-4'>
                 <Image
-                  src='/your-image-path.jpg'
+                  src='/cloth.jpg' // Ensure the image is placed inside public/
                   alt='Store'
                   width={400}
                   height={200}
-                  className='rounded-md'
+                  className='rounded-md object-cover'
                 />
               </div>
             </CardContent>
